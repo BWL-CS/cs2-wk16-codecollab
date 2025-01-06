@@ -1,5 +1,7 @@
 public class PropertyCard {
-    // Instance variables
+    
+    // 1. INSTANCE VARIABLES
+
     private String name;
     private String color;
     private int price;
@@ -8,7 +10,8 @@ public class PropertyCard {
     private int numHouses;
     private boolean mortgaged;
 
-    // Default constructor
+    // 2. CONSTRUCTORS
+
     public PropertyCard() {
         this.name = "Unknown";
         this.color = "None";
@@ -19,7 +22,6 @@ public class PropertyCard {
         this.mortgaged = false;
     }
 
-    // Parameterized constructor
     public PropertyCard(String name, String color, int price, int rent, int houseCost) {
         this.name = name;
         this.color = color;
@@ -30,7 +32,8 @@ public class PropertyCard {
         this.mortgaged = false;
     }
 
-    // Getters
+    // 3. METHODS
+
     public String getName() {
         return name;
     }
@@ -59,7 +62,6 @@ public class PropertyCard {
         return mortgaged;
     }
 
-    // Setters
     public void setName(String name) {
         this.name = name;
     }
@@ -80,45 +82,30 @@ public class PropertyCard {
         this.houseCost = houseCost;
     }
 
-    public void setNumHouses(int numHouses) {
-        this.numHouses = numHouses;
-    }
-
-    public void setMortgaged(boolean mortgaged) {
-        this.mortgaged = mortgaged;
-    }
-
-    // Behavior methods
-
-    // Add a house to the property
     public void addHouse() {
         numHouses++;
-        rent *= 2; // Rent doubles with each house added (example rule)
+        rent *= 2;
     }
 
-    // Remove a house from the property
     public void removeHouse() {
         if (numHouses > 0) {
             numHouses--;
-            rent /= 2; // Rent halves when a house is removed (example rule)
+            rent /= 2; 
         }
     }
 
-    // Mortgage the property
     public void mortgage() {
         if (!mortgaged) {
             mortgaged = true;
         }
     }
 
-    // Unmortgage the property
     public void unmortgage() {
         if (mortgaged) {
             mortgaged = false;
         }
     }
 
-    @Override
     public String toString() {
         return "PropertyCard[" +
                "name='" + name + '\'' +
